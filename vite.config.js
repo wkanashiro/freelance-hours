@@ -1,3 +1,6 @@
+// mapeia o css e js da aplicação para quando rodar o npm run build (cria uma pasta assets na public)
+// usuário não acessa a pasta resources
+
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
