@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/outra-rota', fn() => 'Olá');
+// caso seja uma classe que contenha outros métodos a sintaxe é:
+// Route::get('/', [WelcomeController::class, 'nomeDoMetodo']);
+ 
+Route::get('/', WelcomeController::class);
