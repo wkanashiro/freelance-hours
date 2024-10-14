@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\Proposal;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Actions\ArrangePositions;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,8 @@ class DatabaseSeeder extends Seeder
                     $proj = Project::factory()->create(['created_by' => $u->id]);  // cria 1 projeto e armazena em $proj
 
                     Proposal::factory()->count(random_int(4, 45))->create(['project_id' => $proj->id]); // cria de 4 a 45 propostas e vincula ao id do projeto criado anteriormente
+
+                    ArrangePositions::run($proj->id);
                 }); 
 
         

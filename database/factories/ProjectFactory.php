@@ -19,11 +19,11 @@ class ProjectFactory extends Factory
     {
         return [
             'title' => collect(fake()->words(5))->join(' '), // transforma em array e junta com espaço
-            'description' => fake()->randomHtml(),
+            'description' => 'blablabla',
             'ends_at' => fake()->dateTimeBetween('now', '+ 3 days'),
             'status' => fake()->randomElement(['open', 'closed']),
             'tech_stack' => fake()->randomElements(
-                ['react', 'php', 'laravel', 'vue', 'tailwind', 'js', 'nextjs', 'python'], 
+                ['nodejs', 'react', 'javascript', 'nextjs', 'vite'], 
                 random_int(1, 5)), // isso vai fazer escolher de 1 a 5 elementos do array de stacks
             'created_by' => User::factory(),
         ];
